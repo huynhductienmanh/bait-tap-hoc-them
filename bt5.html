@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id= "abc" src="https://icdn.24h.com.vn/upload/3-2026/images/2026-09-17/455x303/adt1789612560-586e47bf67-tm-6579-8973-7266__anh_cat_3_2.jpg" alt="">
+    <img id="avatar"  alt="avatar user" src="https://cdn.24h.com.vn/upload/4-2024/images/2024-11-13//adt1731491622-1-61537-82-0-864-1251-crop-14794__anh_cat_3_2.jpeg" >
+    <button id="btn">click</button>
+    <script>
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", function(){
+            const img1 = document.getElementById("abc");
+            const img2 = document.getElementById("avatar");
+            const srcImg1 = img1.getAttribute("src");
+            img2.setAttribute("src", srcImg1);
+
+        })
+    </script>
+
+
+</body>
+</html>

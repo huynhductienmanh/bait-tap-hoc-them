@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ACTIVE {
+        background-color: yellow;
+    }
+    </style>
+</head>
+<body>
+    <span id="mySpan">Click</span>
+    <span id="mySpan2">Clickk</span>
+    <p id="myP">vidu</p>
+    <ul>
+        <li class="item">hello1</li>
+        <li class="item">hello2</li>
+        <li class="item">hello3</li>
+        <li class="item">hello4</li>
+    </ul>
+
+    <p id="1">vidu3</p>
+    <button onclick="vd()">the p</button>
+
+    <script> 
+    const span = document.getElementById("mySpan");
+
+    span.addEventListener("click", function () {
+        span.classList.toggle("ACTIVE");
+    });
+
+    const span2 = document.getElementById("mySpan2");
+    const p = document.getElementById("myP");
+    span2.addEventListener("click", function(){
+        span.classList.toggle("ACTIVE");
+        if (span.classList.contains("ACTIVE")) {
+            p.style.display = "none";
+        } else {    
+            p.style.display = "block";
+        }
+
+    });
+
+    const items = document.querySelectorAll(".item");
+
+    for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", function () {
+            items[i].classList.toggle("ACTIVE");
+        });
+    }
+
+    
+    const p1 = document.getElementById("1");
+
+    function vd(){
+        if(p1.style.display == "none"){
+            p1.style.display = "block";
+        }
+        else {
+            p1.style.display = "none";
+        }
+    }
+
+    </script>
+
+
+    
+</body>
+</html>

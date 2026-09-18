@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style type="text/css">
+    .hide {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    
+    ul li {
+      display: inline-block;
+      margin: 0 10px;
+      background-color: red;
+    }
+
+   </style>
+  <div class="demo">
+    <ul>
+      <li class="" id="tintuc">tin tuc</li>
+      <li class="" id="bongda">bong da</li>
+      <li class="" id="thoitrang">thoi trang</li>
+    </ul>
+
+    <div class="content">
+      <div class="hide show" id="c-tintuc">
+        <img src="https://picsum.photos/id/30/500/300" >
+      </div>
+      <div class="hide" id="c-bongda">
+        <img src="https://picsum.photos/id/40/500/300" >
+      </div>
+      <div class="hide" id="c-thoitrang">
+        <img src="https://picsum.photos/id/50/500/300" >
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tintuc = document.getElementById("tintuc");
+    const bongda = document.getElementById("bongda");
+    const thoitrang = document.getElementById("thoitrang");
+
+    const contentTintuc = document.getElementById("c-tintuc");
+    const contentBongda = document.getElementById("c-bongda");
+    const contentThoitrang = document.getElementById("c-thoitrang");
+    
+
+    
+    
+  </script>
+</body>
+</html>
