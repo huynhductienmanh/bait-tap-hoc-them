@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Bao vic - DẠY KÈM LẬP TRÌNH VIÊN CHUYÊN NGHIỆP ĐÀ NẴNG
+    https://www.facebook.com/daykemlaptrinhvien
+  </title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      width: 500px;
+    }
+    h1{
+        text-align: center;
+        color: red;
+    }
+    h2 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    small {
+      color: red;
+      display: block;
+      margin-top: 3px;
+    }
+    #success-message {
+      color: green;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- form la the de nhập dữ liệu vào -->
+
+
+
+
+
+
+
+  
+  <div class="form-container">
+   <h1>Xử lý form trong javascript</h1>
+    <!--  <h2>Đăng nhập</h2> -->
+
+    <!-- action: 
+    - dùng bên backend, de chuyen du liêu qua link trong action
+    - neu k có link action thi se tự truyên du liêu lại chính nó
+     -->
+    <form id="form" action="https://www.24h.com.vn/">
+
+      <div class="form-group">
+        <label>Email:</label>
+
+        <!-- the input de nhập du lieu vào -->
+
+        <input type="text" id="email" placeholder="Nhập email..." value="" />
+        <small id="emailError"></small>
+      </div> 
+
+     <div class="form-group">
+        <label>Pass:</label>
+        <input type="text" id="pass" placeholder="Nhập pass..." />
+        <small id="passError"></small>
+      </div>
+
+      <!-- <textarea ></textarea> -->
+
+     
+      <!-- luôn có 1 the button de click vao -->
+      <button type="submit">Gửi</button>
+
+    </form>
+
+  </div>
+
+
+  <script>
+    // - Cho form dừng sự kiện mặc định của action
+    // - lấy  giá trị nhập vào thẻ input và kiểm tra:
+    //   + nêu input chưa nhập thì báo lỗi
+    //   + nếu đã nhập thi thông báo " thành công" và cho chạy action
+
+
+
+    // mình tạo sẵn các biến trỏ tới các thẻ html cần dùng:
+
+    // document: chi tới trang html 
+    // getElementById: chi the html có id
+    const form = document.getElementById("form");
+
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("emailError");
+
+    const passInput = document.getElementById("pass");
+    const passError = document.getElementById("passError");
+
+    
+  
+
+
+   
+
+    // khi người dùng click vao form
+    // submit: chỉ dành cho form, sự kiện khi click vao button form 
+    form.addEventListener("submit", function(e){
+
+      e.preventDefault(); //cho form dừng action lại
+
+     // lấy gia trị nhập vào input email
+      email = emailInput.value;
+      pass = passInput.value;
+     
+      // let loi =
+
+    // //neu email == rỗng
+      if(email === ""){
+         
+          // textContent: set doan text vao the html
+          emailError.textContent = "vui long nhập email";
+   
+      } else{
+         // xoa loi
+          emailError.textContent = "";
+        
+      }
+      if(pass === ""){
+          // alert("vui long nhap 2")
+      
+          // textContent: set doan text vao the html
+          passError.textContent = "vui long nhập pass";
+   
+      } else{
+        
+          passError.textContent = "";
+      }
+      
+      if(email !== "" && pass != ""){
+        alert("thanh cong")
+        form.submit();
+      }
+
+      
+
+
+
+
+      
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const form = document.getElementById("loginForm");
+    // const emailInput = document.getElementById("email");
+    // const passInput = document.getElementById("password");
+    // const emailError = document.getElementById("emailError");
+    // const passError = document.getElementById("passwordError");
+    // const successMessage = document.getElementById("success-message");
+
+    // form.addEventListener("submit", function (e) {
+    //   e.preventDefault(); // Ngăn reload trang
+
+    //   // Xóa thông báo cũ
+    //   emailError.textContent = "";
+    //   passError.textContent = "";
+    //   successMessage.textContent = "";
+
+    //   let isValid = true;
+    //   alert(emailInput.value.trim());
+    //   // ✅ Kiểm tra email
+    //   if (emailInput.value.trim() === "") {
+    //     emailError.textContent = "Vui lòng nhập email";
+    //     isValid = false;
+    //   } else if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+    //     emailError.textContent = "Email không hợp lệ";
+    //     isValid = false;
+    //   }
+
+    //   // ✅ Kiểm tra mật khẩu
+    //   if (passInput.value.trim() === "") {
+    //     passError.textContent = "Vui lòng nhập mật khẩu";
+    //     isValid = false;
+    //   }
+
+    //   // ✅ Nếu tất cả hợp lệ
+    //   if (isValid) {
+    //     successMessage.textContent = "✅ Đã nhập đầy đủ!";
+    //   }
+    // });
+  </script>
+</body>
+</html>

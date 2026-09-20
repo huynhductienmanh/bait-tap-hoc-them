@@ -23,9 +23,9 @@
    </style>
   <div class="demo">
     <ul>
-      <li class="" id="tintuc">tin tuc</li>
-      <li class="" id="bongda">bong da</li>
-      <li class="" id="thoitrang">thoi trang</li>
+      <li onclick="" id="tintuc">tin tuc</li>
+      <li onclick="" id="bongda">bong da</li>
+      <li onclick="" id="thoitrang">thoi trang</li>
     </ul>
 
     <div class="content">
@@ -51,7 +51,31 @@
     const contentThoitrang = document.getElementById("c-thoitrang");
     
 
-    
+    function showContent(id) {
+
+    if (id === "tintuc") {
+      contentTintuc.classList.add("show");
+      contentBongda.classList.remove("show");
+
+    } else if (id === "bongda") {
+      contentBongda.classList.add("show");
+
+    } else if (id === "thoitrang") {
+      contentThoitrang.classList.add("show");
+    }
+  }
+
+  tintuc.onclick = function() {
+    showContent("tintuc");
+  };
+
+  bongda.onclick = function() {
+    showContent("bongda");
+  };
+
+  thoitrang.onclick = function() {
+    showContent("thoitrang");
+  };
     
   </script>
 </body>
