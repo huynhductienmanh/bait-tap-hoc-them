@@ -4,34 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: 30px auto;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            margin-bottom: 8px;
+            align-items: start;
+        }
+        small {
+            color: red;
+            display: block;
+            margin-top: 3px;
+        }
+    </style>
+
 
 </head>
 <body>
-    <label>Ho va ten</label>
-    <input type="text" name="" id="hvt">
-    <small id="htvError"></small>
-    
-    <label>dia chi email</label>
-    <input type="text" name="" id="email">
-    <small id="emailError"></small>
+    <div class="container">
+        <form id="form">
 
-    <label>nhap so dien thoai</label>
-    <input type="number" name="" id="sdt">
-    <small id="sdtError"></small>
+            <div class="form-group">
+                <label>Họ và tên</label>
+                <input type="text" id="hvt" value="">
+                <small id="hvtError"></small>
+            </div>
 
-    <label>Dia chi noi du tru</label>
-    <input type="text" name="" id="dchi">
-    <small id="dchiError"></small>
+            <div class="form-group">
+                <label>Địa chỉ email</label>
+                <input type="text" id="email" value="">
+                <small id="emailError"></small>
+            </div>
 
-    <label>Tieu de</label>
-    <input type="text" name="" id="tieude">
-    <small id="tieudeError"></small>
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="number" id="sdt" value="">
+                <small id="sdtError"></small>
+            </div>
 
-    <label>Noi dung</label>
-    <input type="text" name="" id="noidung">
-    <small id="noidungError"></small>
+            <div class="form-group">
+                <label>Địa chỉ nơi cư trú</label>
+                <input type="text" id="dchi" value="">
+                <small id="dchiError"></small>
+            </div>
 
-    <button type="submit">gui</button>
-    <button type="c"></button>
+            <div class="form-group">
+                <label>Tiêu đề</label>
+                <input type="text" id="tieude" value="">
+                <small id="tieudeError"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Nội dung</label>
+                <textarea id="noidung" ></textarea>
+                <small id="noidungError"></small>
+            </div>
+
+            <button type="submit">Gửi</button>
+
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById("form");
+
+        const hvtInput = document.getElementById("hvt");
+        const hvtError = document.getElementById("hvtError");
+
+        const emailInput = document.getElementById("email");
+        const emailError = document.getElementById("emailError");
+
+        const sdtInput = document.getElementById("sdt");
+        const sdtError = document.getElementById("sdtError");
+
+        const dchiInput = document.getElementById("dchi");
+        const dchiError = document.getElementById("dchiError");
+
+        const tieudeInput = document.getElementById("tieude");
+        const tieudeError = document.getElementById("tieudeError");
+
+        const noidungInput = document.getElementById("noidung");
+        const noidungError = document.getElementById("noidungError");
+
+        form.addEventListener("submit",function(e){
+            e.preventDefault();
+
+            hvt = hvtInput.value;
+            email = emailInput.value;
+            sdt = sdtInput.value;
+            dchi = dchiInput.value;
+            tieude = tieudeInput.value;
+            noidung = noidungInput.value;
+
+            if(hvt === ""){
+                hvtError.textContent = "vui long nhap ho va ten";
+            }else{
+                hvtError.textContent="";
+            }
+
+            if(email === ""){
+                emailError.textContent = "vui long nhap email";
+            }else{
+                emailError.textContent = "";
+            }
+
+            if(sdt === ""){
+                sdtError.textContent = "vui long nhap so dien thoai";
+            }else{
+                sdtError.textContent = "";
+            }
+
+            if(dchi === ""){
+                dchiError.textContent = "vui long nhap dia chi";
+            }else{
+                dchiError.textContent = "";
+            }
+
+            if(tieude === ""){
+                tieudeError.textContent = "vui long nhap tieu de";
+            }else{
+                tieudeError.textContent = "";
+            }
+
+            if(noidung === ""){
+                noidungError.textContent = "vui long nhap noi dung";
+            }else{
+                noidungError.textContent = "";
+            }
+
+            if(
+                hvt !== "" &&
+                email !== "" &&
+                sdt !== "" &&
+                dchi !== "" &&
+                tieude !== "" &&
+                noidung !== ""
+            ){
+                alert("thanh cong");
+                form.submit();
+            }
+
+            
+        })
+
+    </script>
 </body>
 </html>
