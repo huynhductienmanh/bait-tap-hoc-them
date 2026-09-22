@@ -1,0 +1,76 @@
+.rectangle56,
+.rectangle57 {
+  position: absolute;
+  top: 730px;
+  left: 0;
+  background-color: var(--blue-04);
+  width: 360px;
+  height: 70px;
+}
+.rectangle57 {
+  top: 75px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-white);
+  height: 770px;
+}
+.text72 {
+  position: absolute;
+  top: 22px;
+  left: 59px;
+  font-weight: 500;
+  display: inline-block;
+  width: 244px;
+  height: 46px;
+}
+.frame-child132,
+.frame140,
+.frame143 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.frame-child132 {
+  width: 57px;
+  height: 72px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.frame140,
+.frame143 {
+  background-color: var(--blue-04);
+  width: 360px;
+  height: 800px;
+}
+.frame140 {
+  background-color: var(--color-white);
+}
+.rectangle-icon20 {
+  position: absolute;
+  top: 228px;
+  left: 49px;
+  width: 264px;
+  height: 232px;
+  object-fit: cover;
+}
+.text73 {
+  position: absolute;
+  top: 469px;
+  left: 39px;
+  font-size: var(--font-size-base);
+  font-weight: 300;
+  display: inline-block;
+  width: 274px;
+  height: 52px;
+}
+.frame139 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

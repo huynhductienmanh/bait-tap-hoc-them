@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    body {
+        body {
       font-family: sans-serif;
       background: #f9fafb;
       display: flex;
@@ -69,56 +69,62 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Xử lý form trong javascript</h1>
-        <form id="form" action="https://www.24h.com.vn/">
+        <form action="https://www.24h.com.vn/" id="loginform">
+            <div class="form-group">
+                <label>checkbox:</label>
+                <input type="checkbox" id="checkbox">
+                <small id="checkboxError"></small>
+            </div>
 
             <div class="form-group">
-                <label>Email:</label>
-                <input type="text" id="email" placeholder="Nhập email..." value="" />
-                <small id="emailError"></small>
-            </div> 
+                <label>select:</label>
+                <select name="" id="select">
+                    <option value="">vui long chon</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
 
-            <div class="form-group">
-                <label>Pass:</label>
-                <input type="text" id="pass" placeholder="Nhập pass..." value="" />
                 <small id="passError"></small>
             </div>
 
-            <!-- <textarea ></textarea> -->
-            <button type="submit">Gửi</button>
-
+            <button type="submit">gui</button>
         </form>
+
     </div>
 
     <script>
-        const form = document.getElementById("form");
-        const emailInput = document.getElementById("email");
-        const emailError = document.getElementById("emailError");
-        const passInput = document.getElementById("pass");
+        const form = document.getElementById("loginform");
+        const checkbox = document.getElementById("checkbox");
+        const select = document.getElementById("select");
+        const checkboxError = document.getElementById("checkboxError");
         const passError = document.getElementById("passError");
 
-        form.addEventListener("submit",function(e){
+        form.addEventListener("submit", function(e){
             e.preventDefault();
 
-            email = emailInput.value;
-            pass = passInput.value;
-
-
-            if(email === ""){
-                emailError.textContent = "vui long nhap email";
-            }else{
-                emailError.textContent = "";
+            let loi =0;
+            kiemtra = checkbox.checked;
+            if(kiemtra == false){
+                checkboxError.textContent = "chua tich";
+                loi = 1;
+            }
+            else{
+                checkboxError.textContent = "";
             }
 
-
-            if(pass === ""){
-                passError.textContent = "vui long nhap passs";
-            }else{
-                passError.textContent = "";
+            getSelect = select.value;
+            if(getSelect === ""){
+                passError.textContent = "vui long chon";
+                loi = 1;
+            }
+            else{
+                passError.textContent="";
             }
 
-            if(email !== "" && pass !=""){
-                alert("thanh cong")
+            if(
+                loi == 0
+            ){
+                alert("thanh cong");
                 form.submit();
             }
         })

@@ -1,0 +1,35 @@
+.ui-icon12 {
+  top: 15px;
+  right: 14px;
+  width: 68px;
+  height: 16px;
+  object-fit: cover;
+}
+.time24,
+.time25,
+.ui-icon12 {
+  position: absolute;
+}
+.time25 {
+  width: calc(100% - 2px);
+  top: calc(50% - 5.5px);
+  left: 0.3px;
+  letter-spacing: -0.33px;
+  font-weight: 600;
+  display: inline-block;
+}
+.time24 {
+  top: 8px;
+  left: 21px;
+  width: 56px;
+  height: 23px;
+}
+.status-bar11 {
+  position: relative;
+  width: 100%;
+  height: 29px;
+  text-align: center;
+  font-size: var(--font-size-mini);
+  color: var(--color-black);
+  font-family: var(--font-sf-pro-text);
+}

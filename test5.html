@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Bao vic - DẠY KÈM LẬP TRÌNH VIÊN CHUYÊN NGHIỆP ĐÀ NẴNG
+    https://www.facebook.com/daykemlaptrinhvien
+  </title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      width: 500px;
+    }
+    h1{
+        text-align: center;
+        color: red;
+    }
+    h2 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    small {
+      color: red;
+      display: block;
+      margin-top: 3px;
+    }
+    #success-message {
+      color: green;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- input, textarea, checkbox, select, file, radio -->
+  
+  <div class="form-container">
+    <h1> trong form có các thẻ input, textarea, select, checkbox, radio , file </h1>
+  
+
+    <!-- action: dùng backend, de chuyen du liêu qua link trong action -->
+    <form id="loginForm" action="https://www.24h.com.vn/">
+
+     
+      <div class="form-group">
+        <label>checkbox:</label>
+        <input type="checkbox" id="checkbox" />
+        <small id="checkboxError"></small>
+      </div>
+
+       <div class="form-group">
+        <label>select:</label>
+
+         <select id="select">
+
+          <option value="">vui long chon</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+           
+         </select>
+
+        <small id="passError"></small>
+      </div> 
+
+      <button type="submit">Gửi</button>
+    </form>
+
+   
+
+    <!-- <form id="form2">
+      <button type="submit">Gửi 2</button>
+    </form> -->
+    
+  </div>
+
+
+  <script>
+
+    
+   
+    // mình tạo sẵn các biến trỏ tới các thẻ html cần dùng:
+    const form = document.getElementById("loginForm");
+
+    const checkbox = document.getElementById("checkbox");
+    const select = document.getElementById("select");
+ 
+
+
+    
+
+    // khi người dùng click vao form
+    form.addEventListener("submit", function(e){
+
+      e.preventDefault(); //cho form dừng action lại
+
+      // lây trang thái đã check hay chưa 
+      kiemtra = checkbox.checked
+      alert(kiemtra)
+      // - neu da check => true  
+      // - chua thi false
+
+      if(kiemtra == false){
+        // bao lõi
+        
+      }else{
+        // xoa loi
+      }
+
+      getSelect = select.value;
+      if(getSelect === ""){
+        // bao lõi
+      }else{
+       // xoa loi
+      }
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // bien toàn cục: la biên dc su dung bat ky dau 
+    // bien cục bộ la bien dùng trong pham vi khai bao
+
+
+    // // bien toàn cục
+   
+    // let c =  "" //456
+
+    //  form.addEventListener("submit", function(e){
+
+    //     e.preventDefault(); 
+
+    //     // alert(a) => 123
+
+    //     // bien cục bộ
+    //     let b = 456
+
+    //     c = b 
+
+    //     alert(c) //=> 456
+        
+     
+    // })
+
+    // const form2 = document.getElementById("form2");
+
+    // form2.addEventListener("submit", function(e){
+
+    //    e.preventDefault();
+       
+    //    alert(c) //456
+
+       
+     
+    // })
+
+
+  </script>
+</body>
+</html>

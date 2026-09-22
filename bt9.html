@@ -100,49 +100,52 @@
             tieude = tieudeInput.value;
             noidung = noidungInput.value;
 
+            let loi = 0;
+
             if(hvt === ""){
                 hvtError.textContent = "vui long nhap ho va ten";
+                loi =1;
             }else{
                 hvtError.textContent="";
             }
 
             if(email === ""){
                 emailError.textContent = "vui long nhap email";
+                loi =1; 
             }else{
                 emailError.textContent = "";
             }
 
             if(sdt === ""){
                 sdtError.textContent = "vui long nhap so dien thoai";
+                loi= 1;
             }else{
                 sdtError.textContent = "";
             }
 
             if(dchi === ""){
                 dchiError.textContent = "vui long nhap dia chi";
+                loi =1;
             }else{
                 dchiError.textContent = "";
             }
 
             if(tieude === ""){
                 tieudeError.textContent = "vui long nhap tieu de";
+                loi =1;
             }else{
                 tieudeError.textContent = "";
             }
 
             if(noidung === ""){
                 noidungError.textContent = "vui long nhap noi dung";
+                loi =1;
             }else{
                 noidungError.textContent = "";
             }
 
             if(
-                hvt !== "" &&
-                email !== "" &&
-                sdt !== "" &&
-                dchi !== "" &&
-                tieude !== "" &&
-                noidung !== ""
+                loi == 0
             ){
                 alert("thanh cong");
                 form.submit();

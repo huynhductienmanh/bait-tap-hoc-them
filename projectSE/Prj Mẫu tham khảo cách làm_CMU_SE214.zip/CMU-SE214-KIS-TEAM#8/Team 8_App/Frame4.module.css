@@ -1,0 +1,146 @@
+.rectangle7,
+.rectangle8 {
+  position: absolute;
+  top: 732px;
+  left: 277px;
+  border-radius: var(--br-xl);
+  width: 51px;
+  height: 40px;
+}
+.rectangle8 {
+  top: 72px;
+  left: 1px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-white);
+  width: 360px;
+  height: 768px;
+}
+.text5 {
+  position: absolute;
+  top: 22px;
+  left: 59px;
+  font-weight: 500;
+  display: inline-block;
+  width: 244px;
+  height: 46px;
+}
+.frame-child2 {
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: 57px;
+  height: 72px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.sdt-child12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-28xl);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+  width: 299px;
+  height: 46px;
+}
+.text-field8 {
+  position: absolute;
+  top: 13px;
+  left: 44px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  width: 212px;
+  height: 19px;
+}
+.sdt-child13,
+.text-input8 {
+  position: absolute;
+  display: none;
+}
+.text-input8 {
+  top: 13px;
+  left: 44px;
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+  align-items: center;
+  width: 212px;
+  height: 19px;
+}
+.sdt-child13 {
+  top: 14.5px;
+  left: 43.5px;
+  border-right: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1px;
+  height: 14px;
+}
+.sdt8 {
+  position: absolute;
+  top: 113px;
+  left: 31px;
+  width: 299px;
+  height: 46px;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--blue-02);
+}
+.frame15,
+.frame18 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--blue-04);
+  width: 360px;
+  height: 800px;
+  overflow: hidden;
+}
+.frame15 {
+  background-color: var(--color-white);
+}
+.ui-icon3 {
+  position: absolute;
+  top: 15px;
+  right: 14px;
+  width: 68px;
+  height: 16px;
+  object-fit: cover;
+}
+.time7 {
+  position: absolute;
+  width: calc(100% - 2px);
+  top: calc(50% - 5.5px);
+  left: 0.3px;
+  letter-spacing: -0.33px;
+  font-weight: 600;
+  display: inline-block;
+}
+.status-bar2,
+.time6 {
+  position: absolute;
+  top: 8px;
+  left: 21px;
+  width: 56px;
+  height: 23px;
+}
+.status-bar2 {
+  top: -14px;
+  left: 0;
+  width: 360px;
+  height: 29px;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-sf-pro-text);
+}
+.frame14 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

@@ -1,0 +1,156 @@
+.rectangle44 {
+  position: absolute;
+  top: 732px;
+  left: 277px;
+  border-radius: var(--br-xl);
+  width: 51px;
+  height: 40px;
+  cursor: pointer;
+}
+.rectangle45 {
+  position: absolute;
+  top: 72px;
+  left: 1px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-white);
+  width: 360px;
+  height: 768px;
+}
+.text56 {
+  position: absolute;
+  top: 22px;
+  left: 59px;
+  font-weight: 500;
+  display: inline-block;
+  width: 244px;
+  height: 46px;
+}
+.frame-child121 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 57px;
+  height: 72px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.tnh-trng-sc {
+  position: absolute;
+  top: 111px;
+  left: 34px;
+  font-weight: 500;
+  display: inline-block;
+  width: 294px;
+  height: 26px;
+}
+.sdt-child24 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-28xl);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+  width: 299px;
+  height: 46px;
+}
+.text-field18 {
+  position: absolute;
+  top: 13px;
+  left: 44px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  width: 212px;
+  height: 19px;
+}
+.sdt-child25,
+.text-input18 {
+  position: absolute;
+  display: none;
+}
+.text-input18 {
+  top: 13px;
+  left: 44px;
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+  align-items: center;
+  width: 212px;
+  height: 19px;
+}
+.sdt-child25 {
+  top: 14.5px;
+  left: 43.5px;
+  border-right: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1px;
+  height: 14px;
+}
+.sdt14 {
+  position: absolute;
+  top: 166px;
+  left: 29px;
+  width: 299px;
+  height: 46px;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--blue-02);
+}
+.frame112,
+.frame115 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--blue-04);
+  width: 360px;
+  height: 800px;
+  overflow: hidden;
+}
+.frame112 {
+  background-color: var(--color-white);
+}
+.ui-icon25 {
+  position: absolute;
+  top: 15px;
+  right: 14px;
+  width: 68px;
+  height: 16px;
+  object-fit: cover;
+}
+.time51 {
+  position: absolute;
+  width: calc(100% - 2px);
+  top: calc(50% - 5.5px);
+  left: 0.3px;
+  letter-spacing: -0.33px;
+  font-weight: 600;
+  display: inline-block;
+}
+.status-bar24,
+.time50 {
+  position: absolute;
+  top: 8px;
+  left: 21px;
+  width: 56px;
+  height: 23px;
+}
+.status-bar24 {
+  top: -14px;
+  left: 0;
+  width: 360px;
+  height: 29px;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-sf-pro-text);
+}
+.frame111 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

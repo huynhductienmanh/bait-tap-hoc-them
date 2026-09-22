@@ -1,0 +1,83 @@
+.rectangle35,
+.rectangle36 {
+  position: absolute;
+  top: 730px;
+  left: 0;
+  background-color: var(--blue-04);
+  width: 360px;
+  height: 70px;
+}
+.rectangle36 {
+  top: 75px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-white);
+  height: 766px;
+}
+.text43 {
+  position: absolute;
+  top: 22px;
+  left: 59px;
+  font-weight: 500;
+  display: inline-block;
+  width: 244px;
+  height: 46px;
+}
+.rectangle-icon14 {
+  position: absolute;
+  top: 228px;
+  left: 49px;
+  width: 264px;
+  height: 232px;
+  object-fit: cover;
+}
+.text44 {
+  position: absolute;
+  top: 454px;
+  left: 39px;
+  font-size: var(--font-size-base);
+  font-weight: 300;
+  display: inline-block;
+  width: 274px;
+  height: 52px;
+}
+.frame-child84 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 57px;
+  height: 72px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.frame86,
+.frame87,
+.frame90 {
+  height: 800px;
+  overflow: hidden;
+}
+.frame90 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--blue-04);
+  width: 360px;
+}
+.frame86,
+.frame87 {
+  background-color: var(--color-white);
+}
+.frame87 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+}
+.frame86 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
