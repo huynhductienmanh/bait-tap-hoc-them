@@ -284,6 +284,7 @@
 		const remove = document.getElementById("remove");
 
 
+
 		let q = 0;
 
 		add.addEventListener("click",function(){
@@ -305,9 +306,30 @@
 
 			if( loi == 0){
 				q= q + amountvalue;
+				$(".empty").text("Cart (" + q + ")");
 				alert(q);
 			}
 		});
+
+		remove.addEventListener("click",function(e){
+
+			let qty = Number(amount.value);
+
+			if(q==0){
+				alert("ko co product de xoa");
+			}
+
+			else if(q < qty){
+				alert("So luong muon xoa lon hon gio hang");
+			}
+
+			else{
+				q = q - qty;
+				$(".empty").text("Cart (" + q + ")");
+			}
+
+
+		})
 
 
 
