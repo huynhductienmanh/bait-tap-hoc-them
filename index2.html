@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mang = localStorage.getItem("mang");
+        var mang2 = JSON.parse(mang);
+        mang2.map(function(value,key){
+            if (value ==9){
+                console.log(value);
+            }
+        })
+
+        var mang3=[];
+
+        for(i=0 ; i< mang2.length ; i++){
+            if(mang2[i]<=5){
+                mang3.push(mang2[i]);
+            }
+        }
+        console.log(mang3);
+
+        var mang4 = mang2.filter(function(value){
+            return value <5;
+        });
+        
+        console.log(mang4);
+
+        var lc2 = JSON.stringify(mang4);
+        localStorage.setItem("mang4",lc2);
+
+
+    </script>
+    
+</body>
+</html>

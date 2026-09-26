@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test LocalStorage</title>
+</head>
+
+<body>
+
+<script>
+
+    var mang2 = [];
+
+    for (var i = 1; i < 11; i++) {
+        mang2.push(i);
+    }
+
+    var xx = JSON.stringify(mang2);
+
+    localStorage.setItem("huynh", xx);
+
+    console.log("Đã lưu:");
+    console.log(localStorage.getItem("huynh"));
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
