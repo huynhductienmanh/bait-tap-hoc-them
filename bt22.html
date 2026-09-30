@@ -35,6 +35,29 @@
         chuyen();
         console.log(user);
 
+        objCha = {
+            'bao1': {
+                'xx': 'baovic',
+                'yy': 'baovic@gmail.com'
+            },
+            'bao2': {
+                'xx': 'baovic2',
+                'yy': 'baovic@gmail.com2'
+            },
+            'bao3': {
+                'xx': 'baovic3',
+                'yy': 'baovic3@gmail.com3'
+            },
+            'bao4': {
+                'xx': 'baovic4',
+                'yy': 'baovic4@gmail.com4'
+            }
+        }
+
+        for ( let key in objCha){
+            console.log(key + "-" + objCha[key]["xx"]);
+        }
+
 
 
 
