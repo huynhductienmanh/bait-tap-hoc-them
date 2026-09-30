@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = JSON.parse(localStorage.getItem("a"));
+        console.log(a);
+
+        Object.values(a).map(function(value,index){
+            if(value=="9"){
+                console.log(value)
+            }
+        })
+        let b = {};
+
+        for (let key in a){
+            if (a[key] >= 5){
+                b[key] = a[key];
+            }
+        }
+
+        console.log(b);
+        let zz = JSON.stringify(b);
+        localStorage.setItem("b",zz);
+
+
+    </script>
+</body>
+</html>
