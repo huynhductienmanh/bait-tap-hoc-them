@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mot = JSON.parse(localStorage.getItem("demo"));
+        console.log(mot);
+
+        Object.keys(mot).map(function(key,index){
+            console.log(key);
+            console.log(mot[key]);
+            
+        })
+
+        let demo2 ={
+            nam: "5",
+            sau: "6"
+        }
+
+        mot.abc = demo2;
+
+        var hai = JSON.stringify(mot)
+        localStorage.setItem("hai",hai);
+    </script>
+</body>
+</html>

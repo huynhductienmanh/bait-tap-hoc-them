@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hai = JSON.parse(localStorage.getItem("hai"));
+        console.log(hai);
+
+        Object.keys(hai).map(function(key,index){
+            console.log(key);
+            console.log(hai[key]);
+
+        })
+
+        delete hai["abc"];
+
+        let ba = JSON.stringify(hai);
+        localStorage.setItem("ba",ba);
+
+
+
+    </script>
+</body>
+</html>

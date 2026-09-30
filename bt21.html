@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let b = JSON.parse(localStorage.getItem("b"))
+        console.log(b);
+        let c ={};
+        for(i=11 ; i<21 ;i++){
+            c[i]=i;
+        }
+        console.log(c);
+
+        const d ={
+            ...b,
+            ...c
+        };
+
+        let s =0;
+        Object.values(d).map(function(value,key){
+            s = s+ value;
+        });
+        console.log(s);
+    </script>
+    
+</body>
+</html>
