@@ -7,7 +7,26 @@
 </head>
 <body>
     <script>
-        
+        var mang = localStorage.getItem("mang");
+        var mang1 = JSON.parse(mang);
+        console.log(mang1);
+        var newmang = [];
+        for(i=11 ; i<21; i++ ){
+            newmang.push(i);
+        }
+        console.log(newmang);
+
+        var tong = mang1.concat(newmang);
+        let s = 0;
+        console.log(tong);
+
+        for ( i=0 ; i < tong.length ;i++){
+            s = s + tong[i];
+
+
+        }
+        console.log(s);
+
     </script>
 </body>
 </html>
