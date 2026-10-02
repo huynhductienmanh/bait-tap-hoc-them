@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: 30px auto;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            margin-bottom: 8px;
+            align-items: start;
+        }
+        small {
+            color: red;
+            display: block;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="form">
+            <div class="form-group">
+                <label for="">nhap username</label>
+                <input type="text" id="email" value="">
+                <small id="emailErorr"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="">nhap password</label>
+                <input type="text" id="pass" value="">
+                <small id="passErorr"></small>
+            </div>
+
+            <button type="submit">gui</button>
+
+        </form>
+        
+
+    </div>
+    <script>
+        const form = document.getElementById("form")
+        const emailInput = document.getElementById("email")
+        const passInput = document.getElementById("pass")
+        const emailErorr = document.getElementById("emailErorr")
+        const passErorr = document.getElementById("passErorr")
+
+        let objCon = {
+            xx: "",
+            yy: ""
+        };
+
+        
+        form.addEventListener("submit", function(e){
+
+            let objCha = JSON.parse(localStorage.getItem("objc"))
+
+            email = emailInput.value;
+            pass = passInput.value;
+            let loi = 0;
+
+            if(email === ""){
+                emailErorr.textContent = "vui long ko de trong";
+                loi = 1;
+                
+            }else{
+                emailErorr.textContent = "";
+            }
+
+
+            if(pass === ""){
+                passErorr.textContent = "vui long ko de trong";
+                loi = 1;
+            }else{
+                passErorr.textContent = "";
+            }
+
+            if(loi == 0){
+                objCon.xx = email;
+                objCon.yy = pass;
+
+                objCha[email] = objCon;
+                objc = JSON.stringify(objCha)
+                localStorage.setItem("objc",objc);
+                
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

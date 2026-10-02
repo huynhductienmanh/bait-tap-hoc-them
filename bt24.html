@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+        border:1px solid black;
+    }
+    </style>
+</head>
+<body>
+    
+    <table style="width:100%">
+       <thead>
+          <tr>
+            <th>email</th>
+            <th>pass</th>
+          </tr>
+      </thead>
+      <tbody id="table-body">
+        
+      </tbody>
+    </table>
+
+    <script>
+        const tbody = document.getElementById("table-body");
+
+
+        localStorage.getItem("objc")
+        let objc = JSON.parse(localStorage.getItem("objc"));
+
+        tbody.innerHTML = Object.values(objc).map(value => {
+            return `
+                <tr>
+                    <td>${value.xx}</td>
+                    <td>${value.yy}</td>
+                    <td>${status}</td>
+                </tr>
+            `;
+        }).join("");
+
+    
+
+
+    </script>
+
+    
+</body>
+</html>
