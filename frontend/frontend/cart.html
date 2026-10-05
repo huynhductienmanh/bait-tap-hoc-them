@@ -163,7 +163,7 @@
 							<td></td>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id = "tbody1">
 						<tr>
 							<td class="cart_product">
 								<a href=""><img src="images/cart/one.png" alt=""></a>
@@ -488,6 +488,139 @@
 	<script src="js/jquery.scrollUp.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
-	<script></script>
+	<script>
+		const objcha = JSON.parse(localStorage.getItem("objcha"));
+
+		const tbody1 = document.getElementById("tbody1");
+		tbody1.innerHTML = Object.values(objcha).map(value => {
+			const total = parseFloat(value.price.replace("$", "")) * value.qty;
+
+			return `
+				<tr data-id="${value.id}">
+					<td class="cart_product">
+						<a href="">
+							<img src="${value.img}" alt="">
+						</a>
+					</td>
+
+					<td class="cart_description">
+						<h4><a href="">${value.name}</a></h4>
+						<p>Web ID: ${value.id}</p>
+					</td>
+
+					<td class="cart_price">
+						<p>${value.price}</p>
+					</td>
+
+					<td class="cart_quantity">
+						<div class="cart_quantity_button">
+							<a class="cart_quantity_up"> + </a>
+
+							<input 
+								class="cart_quantity_input" 
+								type="text" 
+								value="${value.qty}" 
+								size="2"
+							>
+
+							<a class="cart_quantity_down"> - </a>
+						</div>
+					</td>
+
+					<td class="cart_total">
+						<p class="cart_total_price">$${total}</p>
+					</td>
+
+					<td class="cart_delete">
+						<a class="cart_quantity_delete" >
+							<i class="fa fa-times"></i>
+						</a>
+					</td>
+				</tr>
+			`;
+		}).join("");
+
+		const btnUp = document.querySelectorAll(".cart_quantity_up");
+		btnUp.forEach(function(btn){
+			btn.addEventListener("click", function () {
+
+				const row = this.closest("tr");
+				const qtyInput = row.querySelector(".cart_quantity_input");
+
+				let qty = parseInt(qtyInput.value);
+				qty++;
+				qtyInput.value = qty;
+
+				const priceText = row.querySelector(".cart_price p").textContent;
+
+				const price = parseFloat(
+					priceText.replace("$", "")
+				);
+				const total = price * qty;
+				row.querySelector(".cart_total_price").textContent = "$" + total;
+
+				const id = row.dataset.id;
+
+				objcha[id].qty = qty;
+
+				localStorage.setItem("objcha", JSON.stringify(objcha));
+			});
+		});
+
+		const btnDown = document.querySelectorAll(".cart_quantity_down");
+		btnDown.forEach(function(btn) {
+			btn.addEventListener("click" , function(){
+				const row = this.closest("tr");
+				const qtyInput = row.querySelector(".cart_quantity_input");
+				let qty = parseInt(qtyInput.value);
+				if (qty > 1) {
+					qty--;
+				}else{
+					alert("ko the xoa product cuoi cung ");
+					return;
+				}
+
+				qtyInput.value = qty;
+
+				const priceText = row.querySelector(".cart_price p").textContent;
+
+				const price = parseFloat(
+					priceText.replace("$", "")
+				);
+				const total = price * qty;
+				row.querySelector(".cart_total_price").textContent = "$" + total;
+
+				const id = row.dataset.id;
+
+				objcha[id].qty = qty;
+
+				localStorage.setItem("objcha", JSON.stringify(objcha));
+			})
+		})
+
+		const btnDelete = document.querySelectorAll(".cart_quantity_delete");
+		btnDelete.forEach(function(btn){
+			btn.addEventListener("click", function () {
+
+				const row = this.closest("tr");
+				const id = row.dataset.id;
+
+				delete objcha[id];
+
+				localStorage.setItem("objcha", JSON.stringify(objcha));
+
+				row.remove();
+
+			});
+		});
+
+
+
+
+
+		
+
+
+	</script>
 </body>
 </html>
