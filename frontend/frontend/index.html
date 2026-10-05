@@ -354,7 +354,7 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						<div class="col-sm-4">
+						<div class="col-sm-4" id="product1">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
@@ -364,7 +364,7 @@
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 										<div class="product-overlay">
-											<div class="overlay-content">
+											<div class="overlay-content" >
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -379,10 +379,10 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4" id="product2">
 							<div class="product-image-wrapper">
 								<div class="single-products">
-									<div class="productinfo text-center">
+									<div class="productinfo text-center" >
 										<img src="images/home/product2.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
@@ -404,7 +404,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4" id="product3">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -429,7 +429,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4" id="product4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -455,7 +455,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4" id="product5">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -481,7 +481,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4" id="product6">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -1065,5 +1065,40 @@
 	<script src="js/price-range.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
+
+	<script>
+		const btnatc = document.querySelectorAll('.add-to-cart');
+		let objcha = JSON.parse(localStorage.getItem("objcha")) || {};
+		
+		btnatc.forEach(function(btn){
+			btn.addEventListener('click', function(e){
+				e.preventDefault();
+				const img = btn.closest('.single-products').querySelector('img').getAttribute('src');
+				const price = btn.closest('.single-products').querySelector('h2').textContent;
+				const name = btn.closest('.single-products').querySelector('p').textContent;
+				const id = btn.closest('.col-sm-4').id;
+
+				const objcon = {
+					img: img,
+					price: price,
+					name: name,
+					id: id,
+					qty: 1
+				};
+
+				if(objcha[id] ){
+					objcha[id].qty +=1;
+				}
+				else{
+					objcha[id] = objcon;
+				}
+
+				let objc = JSON.stringify(objcha);
+				localStorage.setItem("objcha",objc);
+				console.log(objcha);
+			})
+		})
+
+	</script>
 </body>
 </html>
