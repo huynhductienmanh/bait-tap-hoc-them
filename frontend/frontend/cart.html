@@ -539,9 +539,13 @@
 		
 		tinhtong();
 
+		const cartQty = document.getElementById("cart_qty");
+
+
 		const btn = document.querySelectorAll(".cart_quantity_button")
 		btn.forEach(function(btn){
 			btn.addEventListener("click", function (e) {
+				e.preventDefault();
 
 				const row = this.closest("tr");
 				const qtyInput = row.querySelector(".cart_quantity_input");
@@ -572,6 +576,13 @@
 
 				localStorage.setItem("objcha", JSON.stringify(objcha));
 				tinhtong();
+				let tongQty = 0;
+
+				Object.values(objcha).forEach(function(value) {
+					tongQty = tongQty + parseInt(value.qty);
+				});
+				cartQty.textContent = tongQty;
+				
 			});
 		});
 
@@ -589,6 +600,12 @@
 
 				row.remove();
 				tinhtong();
+				let tongQty = 0;
+
+				Object.values(objcha).forEach(function(value) {
+					tongQty = tongQty + parseInt(value.qty);
+				});
+				cartQty.textContent = tongQty;
 
 			});
 		});
@@ -612,15 +629,6 @@
 			tt.textContent = "$" +  (tong + 2);
 		}
 
-		const cartQty = document.getElementById("cart_qty");
-
-		let tongQty = 0;
-
-		Object.values(objcha).forEach(function(value) {
-			tongQty = tongQty + parseInt(value.qty);
-		});
-
-		cartQty.textContent = tongQty;
 				
 
 	</script>
