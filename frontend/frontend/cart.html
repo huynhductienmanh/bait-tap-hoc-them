@@ -89,7 +89,7 @@
 								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart <span id="cart_qty">0</span></a></li>
 								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
@@ -310,10 +310,10 @@
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Cart Sub Total <span>$59</span></li>
+							<li>Cart Sub Total <span id="grand_total" >$59</span></li>
 							<li>Eco Tax <span>$2</span></li>
 							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>$61</span></li>
+							<li>Total <span id="tt">$61</span></li>
 						</ul>
 							<a class="btn btn-default update" href="">Update</a>
 							<a class="btn btn-default check_out" href="">Check Out</a>
@@ -490,11 +490,9 @@
     <script src="js/main.js"></script>
 	<script>
 		const objcha = JSON.parse(localStorage.getItem("objcha"));
-
 		const tbody1 = document.getElementById("tbody1");
 		tbody1.innerHTML = Object.values(objcha).map(value => {
 			const total = parseFloat(value.price.replace("$", "")) * value.qty;
-
 			return `
 				<tr data-id="${value.id}">
 					<td class="cart_product">
@@ -515,14 +513,12 @@
 					<td class="cart_quantity">
 						<div class="cart_quantity_button">
 							<a class="cart_quantity_up"> + </a>
-
 							<input 
 								class="cart_quantity_input" 
 								type="text" 
 								value="${value.qty}" 
 								size="2"
 							>
-
 							<a class="cart_quantity_down"> - </a>
 						</div>
 					</td>
@@ -537,17 +533,30 @@
 						</a>
 					</td>
 				</tr>
+				
 			`;
 		}).join("");
+		
+		tinhtong();
 
-		const btnUp = document.querySelectorAll(".cart_quantity_up");
-		btnUp.forEach(function(btn){
-			btn.addEventListener("click", function () {
+		const btn = document.querySelectorAll(".cart_quantity_button")
+		btn.forEach(function(btn){
+			btn.addEventListener("click", function (e) {
 
 				const row = this.closest("tr");
 				const qtyInput = row.querySelector(".cart_quantity_input");
 
-				qtyInput.value = parseInt(qtyInput.value) + 1;
+				if (e.target.classList.contains("cart_quantity_up")) {
+					qtyInput.value = parseInt(qtyInput.value) + 1;
+				}else if (e.target.classList.contains("cart_quantity_down")) {
+					if (parseInt(qtyInput.value) > 1) {
+						qtyInput.value = parseInt(qtyInput.value) - 1;
+					}
+					else{
+						alert("ko the xoa product cuoi cung ");
+						return;
+					}
+				}
 
 				const priceText = row.querySelector(".cart_price p").textContent;
 				const price = parseFloat(
@@ -559,43 +568,13 @@
 
 				const id = row.dataset.id;
 
-				objcha[id].qty = qty;
+				objcha[id].qty = parseInt(qtyInput.value);
 
 				localStorage.setItem("objcha", JSON.stringify(objcha));
+				tinhtong();
 			});
 		});
 
-
-		const btnDown = document.querySelectorAll(".cart_quantity_down");
-		btnDown.forEach(function(btn) {
-			btn.addEventListener("click" , function(){
-				const row = this.closest("tr");
-				const qtyInput = row.querySelector(".cart_quantity_input");
-				let qty = parseInt(qtyInput.value);
-				if (qty > 1) {
-					qty--;
-				}else{
-					alert("ko the xoa product cuoi cung ");
-					return;
-				}
-
-				qtyInput.value = qty;
-
-				const priceText = row.querySelector(".cart_price p").textContent;
-
-				const price = parseFloat(
-					priceText.replace("$", "")
-				);
-				const total = price * qty;
-				row.querySelector(".cart_total_price").textContent = "$" + total;
-
-				const id = row.dataset.id;
-
-				objcha[id].qty = qty;
-
-				localStorage.setItem("objcha", JSON.stringify(objcha));
-			})
-		})
 
 		const btnDelete = document.querySelectorAll(".cart_quantity_delete");
 		btnDelete.forEach(function(btn){
@@ -609,16 +588,40 @@
 				localStorage.setItem("objcha", JSON.stringify(objcha));
 
 				row.remove();
+				tinhtong();
 
 			});
 		});
 
+		function tinhtong(){
+			const total = document.getElementById("grand_total");
+			const tt = document.getElementById("tt");
+			let tong = 0 ;
 
+			Object.values(objcha).forEach(function(value) {
 
+				const price = parseFloat(
+					value.price.replace("$", "")
+				);
 
+				const qty = parseInt(value.qty);
 
-		
+				tong = tong + price * qty;
+			});
+			total.textContent = "$" + tong;
+			tt.textContent = "$" +  (tong + 2);
+		}
 
+		const cartQty = document.getElementById("cart_qty");
+
+		let tongQty = 0;
+
+		Object.values(objcha).forEach(function(value) {
+			tongQty = tongQty + parseInt(value.qty);
+		});
+
+		cartQty.textContent = tongQty;
+				
 
 	</script>
 </body>
