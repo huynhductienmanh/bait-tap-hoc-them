@@ -547,17 +547,15 @@
 				const row = this.closest("tr");
 				const qtyInput = row.querySelector(".cart_quantity_input");
 
-				let qty = parseInt(qtyInput.value);
-				qty++;
-				qtyInput.value = qty;
+				qtyInput.value = parseInt(qtyInput.value) + 1;
 
 				const priceText = row.querySelector(".cart_price p").textContent;
-
 				const price = parseFloat(
 					priceText.replace("$", "")
 				);
-				const total = price * qty;
-				row.querySelector(".cart_total_price").textContent = "$" + total;
+
+				const total = price * parseInt(qtyInput.value);
+				row.querySelector(".cart_total_price").textContent = "$" + total
 
 				const id = row.dataset.id;
 
@@ -566,6 +564,7 @@
 				localStorage.setItem("objcha", JSON.stringify(objcha));
 			});
 		});
+
 
 		const btnDown = document.querySelectorAll(".cart_quantity_down");
 		btnDown.forEach(function(btn) {
